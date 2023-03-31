@@ -45,7 +45,7 @@ export  CC=/public/software/compiler/gnu/gcc-8.4.0/bin/gcc
 export  CXX=/public/software/compiler/gnu/gcc-8.4.0/bin/g++
 ```
 
-	3. Compile with commands as following:
+3. Compile with commands as following:
 
 ```
 git clone https://github.com/Franklalalala/usenauty
