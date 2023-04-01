@@ -1,22 +1,3 @@
-# File Comments
-## File differences with source library codes
-Changed some files from source (https://pallini.di.uniroma1.it/index.html) Version 2.7R1 (MAY 19 2019):
-- naututil.h:
-    For msvc use, change `<sys/time.h>` to `"times.h"` and `times.c` with Macro defined for arch choice.
-- gtools.h:
-    For msvc use, change `<sys/wait.h>` to `"wait.h"`
-- showg.c:
-    Add a compiler choice `ASLIB`
-
-# Code structure and function enhancement information
-- New `CMakeLists.txt` instead of `makefile`.
-- All `boolean` type code are changed to `_Boolean`
-- Change a Macro in `nauty.h`:
-    `FIRSTBITNZ(x)` to `msc_bsr_xx(x)` where call `unsigned long p` instead of `unsigned long *p`
-
-File and `wait.h` is from `https://github.com/win32ports`, By MIT License. Some necessary changed is with them.
-File `times.h` is used for necessary function and types.
-
 # Compile instruction
 
 ## Before compiling
@@ -65,6 +46,35 @@ VS17 will automatically compile the project.
 Otherwise, one needs to prepare a compiler and cmake that meets requirements. See above.
 
 The compile line is the same as above.
+
+# File Comments
+
+## File differences with source library codes
+
+Changed some files from [source](https://pallini.di.uniroma1.it/index.html) Version 2.7R1 (MAY 19 2019):
+
+- naututil.h:
+  For msvc use, change `<sys/time.h>` to `"times.h"` and `times.c` with Macro defined for arch choice.
+- gtools.h:
+  For msvc use, change `<sys/wait.h>` to `"wait.h"`
+- showg.c:
+  Add a compiler choice `ASLIB`
+
+# Code structure and function enhancement information
+
+- New `CMakeLists.txt` instead of `makefile`.
+- All `boolean` type code are changed to `_Boolean`
+- Change a Macro in `nauty.h`:
+  `FIRSTBITNZ(x)` to `msc_bsr_xx(x)` where call `unsigned long p` instead of `unsigned long *p`
+
+File and `wait.h` is from `https://github.com/win32ports`, By MIT License. Some necessary changed is with them.
+File `times.h` is used for necessary function and types.
+
+Additionally, this project conducted several changes comparing to the original modification in [saltball/usenauty (github.com)](https://github.com/saltball/usenauty). 
+
+* The step and random mode are created on top of the base mode.
+* Code structures are refactored to enable some suitable API.
+* Bugs fixed for compilation in the Linux platform. (credit to @saltball)
 
 # Other info
 This repo is try to use `nauty` for some chemical research and create some new API. It's still on going.
